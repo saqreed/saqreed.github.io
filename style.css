@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+header {
+    position: fixed; /* Закрепляем панель */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75); /* Прозрачный фон для навигации */
+    z-index: 1000; /* Слой для перекрытия других элементов */
+    padding: 10px 0; /* Отступы для верхней панели */
+}
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 220px;
+    cursor: pointer;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #8f1606;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.banner {
+    position: relative; /* Для псевдоэлемента */
+    width: 100%;
+    height: 100vh;
+    background: url('background.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+    text-align: center;
+    overflow: hidden;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Затемнение фона с прозрачностью */
+    z-index: 1; /* Затемнение будет под текстом */
+}
+
+.content {
+    color: #fff;
+    position: relative; /* Позиционирование относительно родителя */
+    z-index: 2; /* Текст выше всех наложений */
+}
+
+.content h1 {
+    font-size: 70px;
+    margin-top: 0; /* Удаление верхнего отступа */
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+
+
+
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #8f1606;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+span {
+    background: #8f1606;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 1s;
+}
+
+button:hover span {
+    width: 100%;
+}
+
+button:hover {
+    border: none;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.back, .reviews, .projects {
+    position: relative; /* Для псевдоэлемента */
+    width: 100%;
+    height: 100vh;
+    background-size: 200% 200%; /* Устанавливаем размер фонового изображения для анимации */
+    animation: gradientMove 5s ease infinite; /* Анимация плавного движения градиента */
+    overflow: hidden;
+}
+
+.back {
+    background: linear-gradient(0deg, rgb(132, 146, 0) 0%, rgb(150, 0, 0) 100%);
+}
+
+.reviews {
+    background: linear-gradient(180deg, rgb(132, 146, 0) 0%, rgb(96, 184, 14) 100%);
+    display: flex;
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+}
+
+.reviews-content {
+    width: 90%;
+    max-width: 1200px; /* Максимальная ширина контента */
+    text-align: center;
+    color: #fff;
+}
+
+.reviews-content h1 {
+    margin-bottom: 60px; /* Расстояние между заголовком и отзывами */
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Два столбца */
+    gap: 20px; /* Расстояние между отзывами */
+    align-items: start; /* Выравнивание по верхнему краю */
+}
+
+.review {
+    background: rgba(0, 0, 0, 0.1); /* Полупрозрачный белый фон */
+    color: #dadada; /* Цвет текста */
+    padding: 40px;
+    border-radius: 10px; /* Смягченные углы */
+    border: 1px solid #000000; /* Обводка */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Тень для выделения */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Выравнивание элементов по высоте */
+    height: 200px; /* Фиксированная высота для квадратного вида */
+}
+
+.review p {
+    font-style: italic; /* Курсив для текста отзыва */
+    margin: 0; /* Удаление внешних отступов */
+}
+
+.reviewer {
+    font-weight: bold; /* Полужирное начертание для имени автора */
+    margin-top: 10px; /* Отступ сверху для разделения имени и отзыва */
+}
+
+.projects {
+    background: linear-gradient(180deg, rgb(96, 184, 14) 0%, rgb(5, 122, 58) 100%);
+}
+
+.content1, .reviews-content, .projects-content {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.content1 h1 {
+    font-size: 70px;
+}
