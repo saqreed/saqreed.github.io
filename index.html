@@ -68,18 +68,20 @@
     <section id="projects" class="projects">
         <div class="projects-content">
             <h1>Проекты</h1>
-            <!-- Ваше содержимое -->
+            <div class="projects-container">
+                <div class="project">
+                    <h2>Строительство дороги в городе N</h2>
+                    <p>
+                        Этот проект включал строительство 5-километровой магистрали в сложных погодных условиях. 
+                        Команда успешно завершила работу на две недели раньше срока, используя новейшие технологии укладки асфальта.
+                    </p>
+                    <p><strong>Дата завершения:</strong> Июнь 2023</p>
+                    <p><strong>Бюджет:</strong> 50 млн рублей</p>
+                    <button onclick="window.location.href='https://example.com/project1'">Подробнее</button>
+                </div>
+            </div>
         </div>
     </section>
-
-    <script>
-        // Плавное возвращение к началу страницы
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('#logo-link').addEventListener('click', function(event) {
-                event.preventDefault(); // Предотвращаем стандартное поведение ссылки
-                document.querySelector('#top').scrollIntoView({ behavior: 'smooth' }); // Плавный скролл
-            });
-        });
-    </script>
+    
 </body>
 </html>

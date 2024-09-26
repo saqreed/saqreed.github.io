@@ -159,11 +159,11 @@ button:hover {
 }
 
 .back {
-    background: linear-gradient(0deg, rgb(132, 146, 0) 0%, rgb(150, 0, 0) 100%);
+    background: linear-gradient(0deg,rgb(60, 0, 0) 0%, rgb(68, 20, 20) 100%);
 }
 
 .reviews {
-    background: linear-gradient(180deg, rgb(132, 146, 0) 0%, rgb(96, 184, 14) 100%);
+    background: linear-gradient(180deg, rgb(60, 0, 0) 0%, rgb(68, 20, 20) 100%);
     display: flex;
     align-items: center; /* Центрирование по вертикали */
     justify-content: center; /* Центрирование по горизонтали */
@@ -211,7 +211,7 @@ button:hover {
 }
 
 .projects {
-    background: linear-gradient(180deg, rgb(96, 184, 14) 0%, rgb(5, 122, 58) 100%);
+    background: linear-gradient(180deg, rgb(68, 20, 20) 0%, rgb(60, 0, 0) 100%);
 }
 
 .content1, .reviews-content, .projects-content {
@@ -226,4 +226,52 @@ button:hover {
 
 .content1 h1 {
     font-size: 70px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    flex-wrap: wrap; /* Чтобы проекты располагались в несколько строк при необходимости */
+    gap: 20px; /* Расстояние между проектами */
+    padding: 20px;
+}
+
+.project {
+    background: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон */
+    color: #333; /* Цвет текста */
+    padding: 20px;
+    border-radius: 10px; /* Смягчённые углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для выделения */
+    width: 45%; /* Устанавливаем ширину для проекта, чтобы он был ближе к квадратной форме */
+    max-width: 500px; /* Ограничиваем максимальную ширину */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Распределение контента по вертикали */
+    height: auto; /* Высота будет зависеть от контента */
+    text-align: center; /* Центрирование текста */
+}
+
+.project h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.project p {
+    margin-bottom: 10px;
+}
+
+.project button {
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #8f1606;
+    color: white;
+    cursor: pointer;
+    margin: 0 auto; /* Центрируем кнопку внутри проекта */
+}
+
+.project button:hover {
+    background-color: #6f1204; /* Темнее при наведении */
 }
